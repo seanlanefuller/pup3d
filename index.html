@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUP3D - Retro FPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Title Screen -->
+    <div id="titleScreen" class="screen active">
+        <div class="title-content">
+            <h1 class="game-title">PUP3D</h1>
+            <p class="subtitle">A Retro First-Person Shooter</p>
+            <button id="startButton" class="btn-primary">START GAME</button>
+            <button id="instructionsButton" class="btn-secondary">INSTRUCTIONS</button>
+        </div>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div id="instructionsScreen" class="screen">
+        <div class="instructions-content">
+            <h2>INSTRUCTIONS</h2>
+            <div class="controls-grid">
+                <div class="control-item">
+                    <span class="key">W A S D</span>
+                    <span class="desc">Move</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">MOUSE</span>
+                    <span class="desc">Look Around</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">CLICK</span>
+                    <span class="desc">Shoot</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">E</span>
+                    <span class="desc">Open Doors</span>
+                </div>
+            </div>
+            <div class="objective">
+                <h3>OBJECTIVE</h3>
+                <p>Navigate through maze-like levels, collect keys to unlock doors, eliminate enemies, and reach the exit.</p>
+            </div>
+            <button id="backButton" class="btn-secondary">BACK</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- HUD Overlay -->
+        <div id="hud">
+            <div class="hud-top">
+                <div class="health-container">
+                    <span class="hud-label">HEALTH</span>
+                    <div class="health-bar">
+                        <div id="healthFill" class="health-fill"></div>
+                    </div>
+                    <span id="healthText" class="health-text">100</span>
+                </div>
+                <div class="keys-container">
+                    <span class="hud-label">KEYS</span>
+                    <div id="keyDisplay" class="key-display"></div>
+                </div>
+            </div>
+            <div class="hud-bottom">
+                <div class="ammo-container">
+                    <span class="hud-label">AMMO</span>
+                    <span id="ammoText" class="ammo-text">50</span>
+                </div>
+                <div class="level-container">
+                    <span id="levelText" class="level-text">LEVEL 1</span>
+                </div>
+            </div>
+            <div id="crosshair" class="crosshair"></div>
+            <div id="damageIndicator" class="damage-indicator"></div>
+            <div id="messageDisplay" class="message-display"></div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <div class="gameover-content">
+            <h1 id="gameOverTitle">GAME OVER</h1>
+            <p id="gameOverMessage"></p>
+            <button id="restartButton" class="btn-primary">TRY AGAIN</button>
+            <button id="menuButton" class="btn-secondary">MAIN MENU</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets.js"></script>
+    <script src="audio.js"></script>
+    <script src="level.js"></script>
+    <script src="levels.js"></script>
+    <script src="player.js"></script>
+    <script src="enemy.js"></script>
+    <script src="weapon.js"></script>
+    <script src="renderer.js"></script>
+    <script src="hud.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
